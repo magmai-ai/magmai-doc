@@ -143,18 +143,62 @@ https://www.youtube.com/embed/ + 视频id
   - [ ] AnimateDiff
   - [ ] Video Style Transfer
 - [ ] Nodes
+
+  **Basic**
+  - [ ] Primitive Nodes
   - [ ] Text to Image
   - [ ] Image to Image
   - [ ] Face Control
   - [ ] Posture Control
   - [ ] Image Style Reference
   - [ ] Outline Control
+  - [ ] Common Effect Control (节点功能设计不完整，暂不做)
   - [ ] Image Segmentation
   - [ ] Image Scale
   - [ ] Image HD
   - [ ] Limit Image Resolution
   - [ ] Image Flip
   - [ ] Image Rotation
+  - [ ] Get Image Size And Count
+  - [ ] Convert Text To Data
+  - [ ] XYGrid Execute
+  - [ ] XYGrid Plot
+  
+  **Advanced**
+  - [ ] Load CheckPoint
+  - [ ] Load ControlNet Model
+  - [ ] Load LoRA
+  - [ ] Load VAE
+  - [ ] CLIP Text Encode (Prompt)
+  - [ ] Empty Latent Image
+  - [ ] KSampler
+  - [ ] KSampler (Advanced)
+  - [ ] VAE Decode
+  - [ ] VAE Encode
+  - [ ] VAE Encode (for Inpainting)
+  - [ ] Load Image
+  - [ ] Load Image (as Mask)
+  - [ ] Load Image Batch
+  - [ ] Save Image
+  - [ ] Preview Image
+  - [ ] Apply ControlNet
+  - [ ] Convert Image to Mask
+
+  **Plugin:Controlnet_aux**
+  - [ ] AIO Aux Preprocessor
+  - [ ] Canny Edge
+  - [ ] DensePose Estimator
+  - [ ] DWPose Estimator
+  - [ ] OpenPose Pose
+  - [ ] Depth Anything
+  - [ ] Zoe Depth Anything
+  - [ ] Inpaint Preprocessor
+  - [ ] Anime Lieart (aka lineart_anime_denoise)
+  - [ ] Standard Lineart
+  - [ ] M-LSD Lines
+  - [ ] Tile
+  - [ ] Pixel Perfect Resolution
+
 - [ ] How to Use
   - [ ] How to Import ComfyUI Workflow
   
