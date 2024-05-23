@@ -125,14 +125,14 @@ https://www.youtube.com/embed/ + 视频id
   - [x] Image to Image (Basic)
   - [ ] Image to Image
   - [ ] Image Inpainting
-  - [ ] Pose Control (Basic)
+  - [x] Pose Control (Basic)
   - [ ] Pose Control
-  - [ ] Face Control (Basic)
+  - [x] Face Control (Basic)
   - [ ] Face Control
-  - [ ] Style Reference (Basic)
-  - [ ] Outline Control (Basic)
-  - [ ] Face + Pose Control (Basic)
-  - [ ] Upscale (Basic)
+  - [x] Style Reference (Basic)
+  - [x] Outline Control (Basic)
+  - [x] Face + Pose Control (Basic)
+  - [x] Upscale (Basic)
   - [ ] Upscale
   - [ ] Controlnets
   - [ ] Loras
