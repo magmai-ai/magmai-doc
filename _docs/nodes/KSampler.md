@@ -26,8 +26,8 @@ Subsequently, this noise is removed using a provided model and conditioning fact
 
 |     Name     | Explanation                  |
 | :---------:| :-------------|
-| ```Model``` | The model used for denoising. |
-| ```Positive and Negative``` | Conditioning factors that influence the generation process. |
+| ```model``` | The model used for denoising. |
+| ```positive and negative``` | Conditioning factors that influence the generation process. |
 | ```latent_image``` | The initial latent image that will be denoised. |
 | ```seed```| A random seed for noise creation. |
 | ```control_after_generate``` | Determines how the seed number changes after each prompt. |
