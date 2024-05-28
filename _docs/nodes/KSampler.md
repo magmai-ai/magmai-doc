@@ -11,7 +11,7 @@ KSampler node is a fundamental component used for generating new versions of lat
 
 <br>
 
-## Brief Introduction
+## Introduction
 
 The KSampler uses the provided model and positive and negative conditioning to generate a new version of the given latent. 
 

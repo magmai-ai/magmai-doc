@@ -8,7 +8,7 @@ order: 1100
 
 <br>
 
-## Brief Introduction
+## Introduction
 
 Apply ControlNet node in ComfyUI is designed to provide additional visual guidance to a diffusion model, enhancing the control over the image generation process. Unlike unCLIP embeddings, controlnets and T2I adaptors are versatile and can be applied to any model, which allows for more precise control over the generation.
 
