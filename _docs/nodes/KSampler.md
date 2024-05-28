@@ -13,7 +13,11 @@ KSampler node is a fundamental component used for generating new versions of lat
 
 ## Brief Introduction
 
-The KSampler uses the provided model and positive and negative conditioning to generate a new version of the given latent. It operates by introducing noise into the latent image according to a specified seed and denoise strength, partially erasing details of the image. Subsequently, this noise is removed using a provided model and conditioning factors, which guide the generation of new details where the image was previously obscured by noise.
+The KSampler uses the provided model and positive and negative conditioning to generate a new version of the given latent. 
+
+It operates by introducing noise into the latent image according to a specified seed and denoise strength, partially erasing details of the image. 
+
+Subsequently, this noise is removed using a provided model and conditioning factors, which guide the generation of new details where the image was previously obscured by noise.
 
 <br>
 
@@ -33,6 +37,8 @@ The KSampler uses the provided model and positive and negative conditioning to g
 | ```scheduler```| The type of schedule for the sampling process. |
 | ```denoise``` | The degree to which information in the latents is erased by noise. |
 
+<br>
+
 ## Outputs
 
 |     Name     | Explanation                  |
@@ -40,9 +46,11 @@ The KSampler uses the provided model and positive and negative conditioning to g
 | ```Refined Image``` | The denoised latent space image. |
 
 
-## How To Use
+<br>
 
-### Use KSampler in text to image workflow
+## How to Use
+
+### Text to Image workflow
 
 The **Text to Image** workflow is one of the most commonly used and basic image generation workflows. You can use this workflow as an example to understand the basic use of the **KSampler** node.
 
@@ -61,7 +69,7 @@ The **KSampler** node required a latent image input, you can use create a empty 
 
 
 
-### Use KSampler in image to image workflow
+### Image to Image Workflow
 
 You can also use a non-blank image as your initial image. And this kind of workflow is **Image to Image** workflows.
 
@@ -76,4 +84,8 @@ In general, ```denoise=0.5-0.9``` is a suitable parameter range for a **Image to
 
 
 
+### Advanced Usage
 
+The **Text to Image** and **Image to Image** workflows are the basic of many advanced workflows. Besides text prompt, you can add additional controls to guide your image generation, such as controlnets, ipadapters, and so on. 
+
+For a more detailed explanation of these controls, please refer to the relevant tutorial documentation.
