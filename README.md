@@ -171,7 +171,7 @@ https://www.youtube.com/embed/ + 视频id
   - [ ] Load VAE
   - [ ] CLIP Text Encode (Prompt)
   - [ ] Empty Latent Image
-  - [ ] KSampler
+  - [x] KSampler
   - [ ] KSampler (Advanced)
   - [ ] VAE Decode
   - [ ] VAE Encode
@@ -181,7 +181,8 @@ https://www.youtube.com/embed/ + 视频id
   - [ ] Load Image Batch
   - [ ] Save Image
   - [ ] Preview Image
-  - [ ] Apply ControlNet
+  - [x] Apply ControlNet
+  - [ ] Apply ControlNet (Advanced)
   - [ ] Convert Image to Mask
 
   **Plugin:Controlnet_aux**
@@ -203,4 +204,19 @@ https://www.youtube.com/embed/ + 视频id
   - [ ] How to Import ComfyUI Workflow
   
 
-  
+
+## Content Requirements
+
+### Nodes
+
+节点文档的写法可以参考**KSampler** 和 **Apply ControlNet**这两个节点的教学文档。
+
+
+对于每个节点的文档，至少需要包含以下的内容：
+
+* 一到两句话的简介：放在文档开头，简明扼要说明这个节点的功能。这个简介后续也会放到combix编辑器的节点说明中。
+* 1 Introduction：原理介绍，节点功能的深度说明和解释
+* 2 Inputs: 输入参数的说明。至少需要说明每个参数是什么，如果可以，对于一些重要参数，可以给出不同值时的效果对比（参考Apply ControlNet文档）。
+* 3 Outputs: 输出参数的说明
+* 4 How to Use: 需要结合不同的使用场景，介绍这个节点的用法，例如和什么节点搭配一起使用，在这个场景中节点是发挥什么作用等，尽可能选取典型有代表性的例子。
+* 5 其它按需增加 
