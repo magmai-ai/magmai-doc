@@ -22,7 +22,6 @@ It focuses on converting text prompts into a structured format (conditioning) th
 | :---------:| :-------------|
 | ```CLIP``` | The CLIP model used for encoding the text. |
 | ```text``` | The text to be encoded. |
-
 ### ```text```
 
 The node includes a text box for entering prompts. Detailed descriptions can refine the generated image to better match your expectations. Multiple descriptions can be input, separated by commas, for a more precise outcome.
@@ -32,7 +31,6 @@ The node includes a text box for entering prompts. Detailed descriptions can ref
 | Vincent Van Gogh, <br>impressionist painting, <br>oil painting, <br>portrait painting | <img src="https://magmai-ai.github.io/magmai-doc/doc_images/VincentVanGogh2.jpg" alt="VincentVanGogh2" width="40%" /> |
 | Vincent Van Gogh, <br>impressionist painting, <br>oil painting, <br>portrait painting, <br>layered thick coating pigment technique, <br>intense color contrast, <br>clear strokes with distinct lines, <br>strong contrast between light and dark, <br>chaos background with stars, <br>deep gaze, <br>deep anxiety and sorrow | <img src="https://magmai-ai.github.io/magmai-doc/doc_images/VincentVanGogh3.jpg" alt="VincentVanGogh3" width="40%" /> |
 
-<br>
 The table above illustrates how to craft effective ```text``` prompts for image generation. It's recommended to specify aspects such as style and medium, reference specific artists or works, outline themes and content, and detail any desired visual effects.
 
 What’s more, you can use “:” and a floatpoint number between 0~1 to determined the weight of each prompt.  <br>eg: (Vincent Van Gogh:0.2), (impressionist painting:0.7)...
@@ -48,7 +46,6 @@ What’s more, you can use “:” and a floatpoint number between 0~1 to determ
 <br>
 
 ## How to Use
-
 ### Positive & Negative Encoder
 
 For more accurate image generation, two **CLIP Text Encode (Prompt)** nodes are often used to constrain image generation from both positive and negative directions. They are typically used in conjunction with the following nodes: 
@@ -68,8 +65,6 @@ If you don't have many requirements for the generated images, you can leave bad 
 | Bad Prompts | 
 | :---------|
 |bad eyes, cgi, airbrushed, plastic, bad quality, watermark, text, low contrast, <br>extra fingers, fewer digits, extra limbs, extra arms, extra legs|
-
-<br>
 ### Conditioning’s Multi-level Processing
 
 It's important to note that **CLIP Text Encode (Prompt)** isn't the only node that can modify ```conditioning```. If you wish to modify it with multiple nodes, the workflow below demonstrates conditioning modified by **Apply ControlNet**.
