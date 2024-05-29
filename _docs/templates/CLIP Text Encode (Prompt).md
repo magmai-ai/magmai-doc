@@ -35,7 +35,10 @@ The node includes a text box for entering ```text``` prompts. Detailed descripti
 
 The table above illustrates how to craft effective ```text``` prompts for image generation. It's recommended to specify aspects such as style and medium, reference specific artists or works, outline themes and content, and detail any desired visual effects.
 
-What’s more, you can use ":" and a number between 0~1 to determined the weight of each prompt. eg: (Vincent Van Gogh:0.2), (impressionist painting:0.7)...
+What’s more, you can use ":" and a number between 0~1 to determined the weight of each prompt. 
+```
+(Vincent Van Gogh:0.2), (impressionist painting:0.7)...
+```
 
 <br>
 
@@ -63,10 +66,9 @@ There are two **CLIP Text Encode (Prompt)** nodes in this simple **Text to Image
 If connected to positive, the conditioning generates positive guidance; correspondingly, the ```text``` prompt should describe the desired content and style. Conversely, the unwanted elements can be specified in another node's ```text``` generating negative conditioning.
 
 If you don't have many requirements for the generated images, you can leave bad ```text``` prompt blank. Here, we provide some useful bad ```text``` prompts that you can use directly to avoid generating bad images.
-
-| Bad Prompts | 
-| :---------|
-|bad eyes, cgi, airbrushed, plastic, bad quality, watermark, text, low contrast, <br>extra fingers, fewer digits, extra limbs, extra arms, extra legs|
+```
+bad eyes, cgi, airbrushed, plastic, bad quality, watermark, text, low contrast, <br>extra fingers, fewer digits, extra limbs, extra arms, extra legs
+```
 
 ### Conditioning’s Multi-level Processing
 
