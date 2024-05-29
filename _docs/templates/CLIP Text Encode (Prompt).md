@@ -60,9 +60,9 @@ For more accurate image generation, two **CLIP Text Encode (Prompt)** nodes are 
 
 There are two **CLIP Text Encode (Prompt)** nodes in this simple **Text to Image** workflow. Tracing the conditioning line reveals one connected to **KSampler's** positive input and the other to its negative input, highlighting their differences.
 
-If connected to positive, the conditioning generates positive guidance; correspondingly, the ```text``` prompt should describe the desired content and style. Conversely, the unwanted elements can be specified in another node generating negative conditioning.
+If connected to positive, the conditioning generates positive guidance; correspondingly, the ```text``` prompt should describe the desired content and style. Conversely, the unwanted elements can be specified in another node's ```text``` generating negative conditioning.
 
-If you don't have many requirements for the generated images, you can leave bad prompt blank. Here, we provide some useful bad prompts that you can use directly to avoid generating bad images.
+If you don't have many requirements for the generated images, you can leave bad ```text``` prompt blank. Here, we provide some useful bad ```text``` prompts that you can use directly to avoid generating bad images.
 
 | Bad Prompts | 
 | :---------|
@@ -71,7 +71,8 @@ If you don't have many requirements for the generated images, you can leave bad 
 ### Conditioning’s Multi-level Processing
 
 It's important to note that **CLIP Text Encode (Prompt)** isn't the only node that can modify ```conditioning```. If you wish to modify it with multiple nodes, the workflow below demonstrates conditioning modified by **Apply ControlNet**.
-You can simply treat the multiple nodes within the red box as a single entity, and their collective function is to add commands that simulate character actions to conditioning. <br>More about **Apply ControlNet** in [here](https://magmai-ai.github.io/magmai-doc/nodes/Apply%20ControlNet/).
+
+You can simply treat the multiple nodes within the red box as a single entity, and their collective function is to add commands that simulate character actions to conditioning. More about **Apply ControlNet** in [here](https://magmai-ai.github.io/magmai-doc/nodes/Apply%20ControlNet/).
 
 <img src="https://magmai-ai.github.io/magmai-doc/doc_images/ConditioningMultiProcess.jpg" alt="Conditioning’s Multi-level Processing" width="=70%" />
 
