@@ -29,9 +29,9 @@ The node includes a text box for entering prompts. Detailed descriptions can ref
 
 |     Prompts     | Result                  |
 | :---------:| :-------------:|
-| Vincent Van Gogh | <img src="https://magmai-ai.github.io/magmai-doc/doc_images/VincentVanGogh1.jpg" alt="VincentVanGogh1" width="40%" /> |
-| Vincent Van Gogh, <br>impressionist painting, <br>oil painting, <br>portrait painting | <img src="https://magmai-ai.github.io/magmai-doc/doc_images/VincentVanGogh2.jpg" alt="VincentVanGogh2" width="40%" /> |
-| Vincent Van Gogh, <br>impressionist painting, <br>oil painting, <br>portrait painting, <br>layered thick coating pigment technique, <br>intense color contrast, <br>clear strokes with distinct lines, <br>strong contrast between light and dark, <br>chaos background with stars, <br>deep gaze, <br>deep anxiety and sorrow | <img src="https://magmai-ai.github.io/magmai-doc/doc_images/VincentVanGogh3.jpg" alt="VincentVanGogh3" width="40%" /> |
+| Vincent Van Gogh | <img src="https://magmai-ai.github.io/magmai-doc/doc_images/VincentVanGogh1.jpg" alt="VincentVanGogh1" width="70%" /> |
+| Vincent Van Gogh, <br>impressionist painting, <br>oil painting, <br>portrait painting | <img src="https://magmai-ai.github.io/magmai-doc/doc_images/VincentVanGogh2.jpg" alt="VincentVanGogh2" width="70%" /> |
+| Vincent Van Gogh, <br>impressionist painting, <br>oil painting, <br>portrait painting, <br>layered thick coating pigment technique, <br>intense color contrast, <br>clear strokes with distinct lines, <br>strong contrast between light and dark, <br>chaos background with stars, <br>deep gaze, <br>deep anxiety and sorrow | <img src="https://magmai-ai.github.io/magmai-doc/doc_images/VincentVanGogh3.jpg" alt="VincentVanGogh3" width="70%" /> |
 
 The table above illustrates how to craft effective ```text``` prompts for image generation. It's recommended to specify aspects such as style and medium, reference specific artists or works, outline themes and content, and detail any desired visual effects.
 
