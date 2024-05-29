@@ -37,7 +37,7 @@ The table above illustrates how to craft effective ```text``` prompts for image 
 
 What’s more, you can use ":" and a number between 0~1 to determined the weight of each prompt. 
 ```
-(Vincent Van Gogh:0.2), (impressionist painting:0.7)...
+(Vincent Van Gogh:0.2), (impressionist painting:0.7), (sunflower:0.5)
 ```
 
 <br>
@@ -67,7 +67,8 @@ If connected to positive, the conditioning generates positive guidance; correspo
 
 If you don't have many requirements for the generated images, you can leave bad ```text``` prompt blank. Here, we provide some useful bad ```text``` prompts that you can use directly to avoid generating bad images.
 ```
-bad eyes, cgi, airbrushed, plastic, bad quality, watermark, text, low contrast, <br>extra fingers, fewer digits, extra limbs, extra arms, extra legs
+bad eyes, cgi, airbrushed, bad quality, watermark, text, low contrast, 
+extra fingers, fewer digits, extra limbs, extra arms, extra legs, plastic
 ```
 
 ### Conditioning’s Multi-level Processing
