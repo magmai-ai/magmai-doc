@@ -25,18 +25,18 @@ It focuses on converting text prompts into a structured format (conditioning) th
 | ```CLIP``` | The CLIP model used for encoding the text. |
 | ```text``` | The text to be encoded. |
 
-### text
+### ```text```
 
 The node includes a text box for entering prompts. Detailed descriptions can refine the generated image to better match your expectations. Multiple descriptions can be input, separated by commas, for a more precise outcome.
 
 |     Prompts     | Result                  |
 | :---------:| :-------------|
-| Vincent Van Gogh | <img src="https://doc.combix.ai/doc_images/TextPrompt1.jpg" alt="VincentVanGogh1" width="60%" /> |
-| Vincent Van Gogh, <br>impressionist painting, <br>oil painting, <br>portrait painting | <img src="https://doc.combix.ai/doc_images/TextPrompt2.jpg" alt="VincentVanGogh2" width="60%" /> |
-| Vincent Van Gogh, <br>impressionist painting, <br>oil painting, <br>portrait painting, <br>layered thick coating pigment technique, <br>intense color contrast, <br>clear strokes with distinct lines, <br>strong contrast between light and dark, <br>chaos background with stars, <br>deep gaze, <br>deep anxiety and sorrow | <img src="https://doc.combix.ai/doc_images/TextPrompt3.jpg" alt="VincentVanGogh3" width="60%" /> |
+| Vincent Van Gogh | <img src="https://doc.combix.ai/doc_images/VincentVanGogh1.jpg" alt="VincentVanGogh1" width="60%" /> |
+| Vincent Van Gogh, <br>impressionist painting, <br>oil painting, <br>portrait painting | <img src="https://doc.combix.ai/doc_images/VincentVanGogh2.jpg" alt="VincentVanGogh2" width="60%" /> |
+| Vincent Van Gogh, <br>impressionist painting, <br>oil painting, <br>portrait painting, <br>layered thick coating pigment technique, <br>intense color contrast, <br>clear strokes with distinct lines, <br>strong contrast between light and dark, <br>chaos background with stars, <br>deep gaze, <br>deep anxiety and sorrow | <img src="https://doc.combix.ai/doc_images/VincentVanGogh3.jpg" alt="VincentVanGogh3" width="60%" /> |
 <br>
 
-The table above illustrates how to craft effective text prompts for image generation. It's recommended to specify aspects such as style and medium, reference specific artists or works, outline themes and content, and detail any desired visual effects.
+The table above illustrates how to craft effective ```text``` prompts for image generation. It's recommended to specify aspects such as style and medium, reference specific artists or works, outline themes and content, and detail any desired visual effects.
 
 What’s more, you can use “:” and a floatpoint number between 0~1 to determined the weight of each prompt.  <br>eg: (Vincent Van Gogh:0.2), (impressionist painting:0.7)...
 
@@ -56,7 +56,7 @@ What’s more, you can use “:” and a floatpoint number between 0~1 to determ
 
 ### Positive & Negative Encoder
 
-For more accurate image generation, two **CLIP Text Encode (Prompt)** nodes are often used to constrain image generation from both ```positive``` and ```negative``` directions. They are typically used in conjunction with the following nodes: 
+For more accurate image generation, two **CLIP Text Encode (Prompt)** nodes are often used to constrain image generation from both positive and negative directions. They are typically used in conjunction with the following nodes: 
 
 * **Load Checkpoint**: This node provides a ```CLIP``` model for both **CLIP Text Encode (Prompt) nodes**. Note that you can also use the ```CLIP``` model from **Load LoRA** and other nodes.
 
@@ -69,26 +69,23 @@ For more accurate image generation, two **CLIP Text Encode (Prompt)** nodes are 
 
 There are two **CLIP Text Encode (Prompt)** nodes in this simple **Text to Image** workflow. Tracing the conditioning line reveals one connected to **KSampler's** positive input and the other to its negative input, highlighting their differences.
 
-If connected to positive, the conditioning generates ```positive``` guidance; correspondingly, the text prompt should describe the desired content and style. Conversely, the unwanted elements can be specified in another node generating ```negative``` conditioning.
+If connected to positive, the conditioning generates positive guidance; correspondingly, the ```text``` prompt should describe the desired content and style. Conversely, the unwanted elements can be specified in another node generating negative conditioning.
 
 If you don't have many requirements for the generated images, you can leave bad prompt blank. Here, we provide some useful bad prompts that you can use directly to avoid generating bad images.
 
 
 |bad eyes, cgi, airbrushed, plastic, bad quality, watermark, text, low contrast, <br>extra fingers, fewer digits, extra limbs, extra arms, extra legs|
 | :---------:|
-
 <br>
 
 ### Conditioning’s Multi-level Processing
 
-It's important to note that the encoder isn't the only node that can modify ```conditioning```. If you wish to modify it with multiple nodes, the workflow below demonstrates conditioning modified by **Apply ControlNet**.
+It's important to note that **CLIP Text Encode (Prompt)** isn't the only node that can modify ```conditioning```. If you wish to modify it with multiple nodes, the workflow below demonstrates conditioning modified by **Apply ControlNet**.
 You can simply treat the multiple nodes within the red box as a single entity, and their collective function is to add commands that simulate character actions to conditioning. <br>More about **Apply ControlNet** in [here](https://magmai-ai.github.io/magmai-doc/nodes/Apply%20ControlNet/).
 
 <img src="https://magmai-ai.github.io/magmai-doc/doc_images/ConditioningMultiProcess.jpg" alt="Conditioning’s Multi-level Processing" width="=70%" />
 
-<br>
+In this workflow, the ```conditioning``` generated by **CLIP Text Encode (Prompt)** aren't directly sent to **KSampler** but are processed through **Apply Controlnet** first, then imported into **KSampler** (view the bold green line in the image). This node adds new embeddings to the existing conditioning, influencing the final image generation.
 
-In this workflow, the ```conditioning``` generated by the encoder aren't directly sent to **KSampler** but are processed through **Apply Controlnet** first, then imported into **KSampler** (view the bold green line in the image). This node adds new embeddings to the existing conditioning, influencing the final image generation.
-
-This inspirates us that the output of the **CLIP Text Encode (Prompt)** node **does not** need to be directly connected to **KSampler**, but can be flexibly used as input of other nodes.
+This inspirates us that the output of **CLIP Text Encode (Prompt)** node **does not** need to be directly connected to **KSampler**, but can be flexibly used as input of other nodes.
 
