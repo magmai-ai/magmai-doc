@@ -22,9 +22,11 @@ It focuses on converting text prompts into a structured format (conditioning) th
 | :---------:| :-------------|
 | ```CLIP``` | The CLIP model used for encoding the text. |
 | ```text``` | The text to be encoded. |
+
 ### ```text```
 
 The node includes a text box for entering prompts. Detailed descriptions can refine the generated image to better match your expectations. Multiple descriptions can be input, separated by commas, for a more precise outcome.
+
 |     Prompts     | Result                  |
 | :---------:| :-------------:|
 | Vincent Van Gogh | <img src="https://magmai-ai.github.io/magmai-doc/doc_images/VincentVanGogh1.jpg" alt="VincentVanGogh1" width="40%" /> |
@@ -65,6 +67,7 @@ If you don't have many requirements for the generated images, you can leave bad 
 | Bad Prompts | 
 | :---------|
 |bad eyes, cgi, airbrushed, plastic, bad quality, watermark, text, low contrast, <br>extra fingers, fewer digits, extra limbs, extra arms, extra legs|
+
 ### Conditioning’s Multi-level Processing
 
 It's important to note that **CLIP Text Encode (Prompt)** isn't the only node that can modify ```conditioning```. If you wish to modify it with multiple nodes, the workflow below demonstrates conditioning modified by **Apply ControlNet**.
