@@ -1,7 +1,7 @@
 ---
 title: CLIP Text Encode (Prompt) 
 category: Nodes
-order: 1
+order: 2
 ---
 
 **CLIP Text Encode (Prompt)** node is an important node for converting text into conditionings, which can provide guidance for image generation based on any text prompts.
