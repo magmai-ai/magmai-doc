@@ -11,11 +11,13 @@ order: 1
 
 ## Introduction
 
-This node operates as a selector. It selects the appropriate model based on the ckpt_name chosen by user. It also provide the clip model used for encoding text prompts and the vae model used for encoding and decoding images to and from latent space. 
+This node operates as a selector. It selects the appropriate model based on the ckpt_name chosen by user. It also provide the CLIP model used for encoding text prompts and the VAE model used for encoding and decoding images to and from latent space. 
 
-Think of Load Checkpoint as the power source of a circuit, generating three distinct currents: model, vae, and clip. By connecting wires to corresponding nodes, you can activate their functions.
+Think of Load Checkpoint as the power source of a circuit, generating three distinct currents: model, VAE, and clip. By connecting wires to corresponding nodes, you can activate their functions.
 
 Note that some models may not include VAE, which may result in node not having VAE output.
+
+
 <br>
 
 
@@ -67,4 +69,7 @@ Sometimes, the model from **Load Checkpoint** may be not good enough. In such ca
 
 <img src="https://magmai-ai.github.io/magmai-doc/doc_images/OutputModelfromLora_0.jpg" alt="Output Model from Lora" width="=70%" />
 
+<br>
+
+In this workflow, **Load Checkpoint's** ```model``` and ```CLIP``` outputs connect to **Lora's** inputs, and nodes requiring ```model``` and ```CLIP``` inputs use **Lora's** output instead of **Load Checkpoint's**. Note that ```VAE``` retains its original output. This modifies the diffusion model, producing more stylistic works.
 
