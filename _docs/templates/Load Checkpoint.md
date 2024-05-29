@@ -71,5 +71,5 @@ Sometimes, the model from **Load Checkpoint** may be not good enough. In such ca
 
 <br>
 
-In this workflow, **Load Checkpoint's** ```model``` and ```CLIP``` outputs connect to **Lora's** inputs, and nodes requiring ```model``` and ```CLIP``` inputs use **Lora's** output instead of **Load Checkpoint's**. Note that ```VAE``` retains its original output. This modifies the diffusion model, producing more stylistic works.
+In this workflow, **Load Checkpoint's** ```model``` and ```CLIP``` outputs connect to **Lora's** inputs, and nodes requiring model and CLIP inputs use **Lora's** output instead of **Load Checkpoint's**. Note that ```VAE``` retains its original output. This modifies the diffusion model, producing more stylistic works.
 
