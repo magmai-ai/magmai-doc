@@ -35,8 +35,7 @@ The node includes a text box for entering ```text``` prompts. Detailed descripti
 
 The table above illustrates how to craft effective ```text``` prompts for image generation. It's recommended to specify aspects such as style and medium, reference specific artists or works, outline themes and content, and detail any desired visual effects.
 
-What’s more, you can use ":" and a number between 0~1 to determined the weight of each prompt.  <br>
-eg: (Vincent Van Gogh:0.2), (impressionist painting:0.7)...
+What’s more, you can use ":" and a number between 0~1 to determined the weight of each prompt. eg: (Vincent Van Gogh:0.2), (impressionist painting:0.7)...
 
 <br>
 
