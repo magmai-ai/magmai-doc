@@ -25,7 +25,7 @@ It focuses on converting text prompts into a structured format (conditioning) th
 
 ### ```text```
 
-The node includes a text box for entering prompts. Detailed descriptions can refine the generated image to better match your expectations. Multiple descriptions can be input, separated by commas, for a more precise outcome.
+The node includes a text box for entering ```text``` prompts. Detailed descriptions can refine the generated image to better match your expectations. Multiple descriptions can be input, separated by commas, for a more precise outcome.
 
 |     Prompts     | Result                  |
 | :---------:| :-------------:|
@@ -35,7 +35,8 @@ The node includes a text box for entering prompts. Detailed descriptions can ref
 
 The table above illustrates how to craft effective ```text``` prompts for image generation. It's recommended to specify aspects such as style and medium, reference specific artists or works, outline themes and content, and detail any desired visual effects.
 
-What’s more, you can use “:” and a floatpoint number between 0~1 to determined the weight of each prompt.  <br>eg: (Vincent Van Gogh:0.2), (impressionist painting:0.7)...
+What’s more, you can use ":" and a number between 0~1 to determined the weight of each prompt.  <br>
+eg: (Vincent Van Gogh:0.2), (impressionist painting:0.7)...
 
 <br>
 
