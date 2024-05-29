@@ -6,7 +6,6 @@ order: 1
 
 **Load Checkpoint** node is a fundamental component to load a diffusion model, which are used to denoise latents. This node will also provide the appropriate VAE and CLIP model.
 
-
 <br>
 
 ## Introduction
@@ -17,7 +16,6 @@ Think of Load Checkpoint as the power source of a circuit, generating three dist
 
 Note that some models may not include VAE, which may result in node not having VAE output.
 
-
 <br>
 
 
@@ -26,7 +24,6 @@ Note that some models may not include VAE, which may result in node not having V
 |     Name     | Explanation                  |
 | :---------:| :-------------|
 | ```ckpt_name``` | The checkpoint use for diffusion model. |
-
 
 <br>
 
@@ -37,7 +34,6 @@ Note that some models may not include VAE, which may result in node not having V
 | ```model``` | The model used for workflow. |
 | ```vae``` | The VAE model used for encoding and decoding images to and from latent space. |
 | ```clip``` | The CLIP model used for encoding text prompts. |
-
 
 <br>
 
@@ -53,9 +49,6 @@ Typically, it is used with the following nodes:
 * **VAE Decode**: Using the ```VAE```, this node decodes the latent image data output by KSampler into ordinary image data before we can view it.
 
 <img src="https://magmai-ai.github.io/magmai-doc/doc_images/DirectOutputModel_0.jpg" alt="Direct Output Model" width="=70%" />
-
-<br>
-
 The example workflow shown above is a simple **Text to Image** workflow.
 
 In this workflow, **Load Checkpoint** is the sole source of ```model```, ```VAE```, and ```CLIP``` outputs, with any node requiring them connected accordingly. This enables the nodes to function as intended.
@@ -66,10 +59,6 @@ In this workflow, **Load Checkpoint** is the sole source of ```model```, ```VAE`
 Sometimes, the model from **Load Checkpoint** may be not good enough. In such cases, constructing smaller, more agile models based on the diffusion model is necessary, with **Load LoRA** being a popular choice.
 * **Load LoRA**: This node can modify ```model``` and ```CLIP``` to change the way Latent data is denoised.
 
-
 <img src="https://magmai-ai.github.io/magmai-doc/doc_images/OutputModelfromLora_0.jpg" alt="Output Model from Lora" width="=70%" />
 
-<br>
-
 In this workflow, **Load Checkpoint's** ```model``` and ```CLIP``` outputs connect to **Lora's** inputs, and nodes requiring model and CLIP inputs use **Lora's** output instead of **Load Checkpoint's**. Note that ```VAE``` retains its original output. This modifies the diffusion model, producing more stylistic works.
-
