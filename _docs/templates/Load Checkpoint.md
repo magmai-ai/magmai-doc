@@ -22,7 +22,7 @@ Note that some models may not include VAE, which may result in node not having V
 ## Inputs
 
 |     Name     | Explanation                  |
-| :---------:| :-------------|
+| :---------:| :-------------:|
 | ```ckpt_name``` | The checkpoint use for diffusion model. |
 
 <br>
