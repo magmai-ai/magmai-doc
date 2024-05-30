@@ -5,6 +5,7 @@ order: 5
 ---
 
 The **VAE Encode** node encode the pixel images.
+
 <br>
 
 ## Introduction
