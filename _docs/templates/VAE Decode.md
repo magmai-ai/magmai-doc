@@ -5,6 +5,7 @@ order: 4
 ---
 
 The **VAE Decode** node decode the latent images.
+
 <br>
 
 ## Introduction
