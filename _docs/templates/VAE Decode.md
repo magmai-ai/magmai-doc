@@ -40,7 +40,7 @@ Load Checkpoint: This node supplies the ```VAE``` model necessary for the **VAE 
 
 * **Preview Image**: This node receives the decoded ```image``` from the **VAE Decode** node and enables the preview of images directly within the node graph.
 
-<img src="https://magmai-ai.github.io/magmai-doc/doc_images/ASeriesofImages.jpg" alt="A Series of Images" width="=70%" />
+<img src="https://magmai-ai.github.io/magmai-doc/doc_images/PreviewingtheOutcome.jpg" alt="Previewing the Outcome" width="=70%" />
 
 
 In the typical workflow, the latent image processed by the **KSampler** node is decoded by the **VAE Decode** node, with the results then presented in the **Preview Image** node's interface.
