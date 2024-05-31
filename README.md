@@ -119,6 +119,12 @@ https://www.youtube.com/embed/ + 视频id
 
 - [ ] Overview
   - [x] Combix Editor
+- [ ] Models and Tools
+  - [ ] Diffusion Checkpoints
+  - [ ] Loras
+  - [ ] Controlnets
+  - [ ] Ipadapters
+  - [ ] Combix Styles (暂不做)
 - [ ] Templates
   - [x] Text to Image (Basic)
   - [ ] Text to Image
