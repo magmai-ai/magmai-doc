@@ -32,13 +32,11 @@ This node does not produce any traditional outputs; instead, it offers a visual 
 
 ### Preview the Work
 
-The **Preview Image** node can be strategically placed at various points within your workflow to offer immediate visual feedback. For instance, you might connect it to the output of a **VAE Encode** node at the end of your workflow to get a glimpse of the encoded ```image```:
+<img src="https://magmai-ai.github.io/magmai-doc/doc_images/PreviewtheWork.jpg" alt="Preview the Work" width="=70%" />
 
-<img src="https://magmai-ai.github.io/magmai-doc/doc_images/DirectOutputModel_0.jpg" alt="Direct Output Model" width="=70%" />
+The **Preview Image** node can be strategically placed at various points within your workflow to offer immediate visual feedback. For instance, you might connect it to the output of a **VAE Encode** node at the end of your workflow to get a glimpse of the encoded ```image```.
 
-Furthermore, it can be used to preview semi-finished images at intermediate stages. By connecting the **Preview Image** node to any node that outputs an ```image```, such as the **AIO Aux Preprocessor** node depicted in the figure, you can gain insights and make adjustments as needed:
-
-<img src="https://magmai-ai.github.io/magmai-doc/doc_images/DirectOutputModel_0.jpg" alt="Direct Output Model" width="=70%" />
+Furthermore, it can be used to preview semi-finished images at intermediate stages. By connecting the **Preview Image** node to any node that outputs an ```image```, such as the **AIO Aux Preprocessor** node depicted in the figure, you can gain insights and make adjustments as needed.
 
 This visual feedback is invaluable for **debugging** and fine-tuning your workflow.
 
