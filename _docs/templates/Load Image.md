@@ -39,8 +39,8 @@ It generates a ```mask``` where transparent areas are marked as 0 (white) and op
 
 |     Mask Shape     | result                  |
 | :---------:| :-------------: |
-| <img src="https://magmai-ai.github.io/magmai-doc/doc_images/Mask1.jpg" alt="Mask" width="=70%" /> | <img src="https://magmai-ai.github.io/magmai-doc/doc_images/Mask3.jpg" alt="Mask" width="=70%" /> |
-| <img src="https://magmai-ai.github.io/magmai-doc/doc_images/Mask2.jpg" alt="Mask" width="=70%" /> | <img src="https://magmai-ai.github.io/magmai-doc/doc_images/Mask4.jpg" alt="Mask" width="=70%" /> |
+| <img src="https://magmai-ai.github.io/magmai-doc/doc_images/Mask1.jpg" alt="Mask" width="=50%" /> | <img src="https://magmai-ai.github.io/magmai-doc/doc_images/Mask3.jpg" alt="Mask" width="=70%" /> |
+| <img src="https://magmai-ai.github.io/magmai-doc/doc_images/Mask2.jpg" alt="Mask" width="=50%" /> | <img src="https://magmai-ai.github.io/magmai-doc/doc_images/Mask4.jpg" alt="Mask" width="=70%" /> |
 
 In the table, the distinction between transparent and non-transparent areas in ```mask``` significantly influences the content of the resulting images. 
 
@@ -54,7 +54,7 @@ The **Load Image** node can be employed to load ```images``` for a multitude of 
 
 <img src="https://magmai-ai.github.io/magmai-doc/doc_images/UseasaPixelInput.jpg" alt="Use as a pixel Input" width="=70%" />
 
-###Mask Control
+### Mask Control
 
 After loading the ```image```, you can use the eraser in the edit button to adjust the transparency channel of the ```image```, thereby changing the corresponding mask for the image. To obtain the mask, you can connect the ```mask``` output.
 
