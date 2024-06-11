@@ -45,7 +45,7 @@ Typically, the **VAE Encode** node is used with the following nodes:
 
 * **KSampler**: This node generates a new version of the latent image, starting from the ```latent``` provided by **VAE Encode**.
 
-<img src="https://magmai-ai.github.io/magmai-doc/doc_images/DirectOutputModel_0.jpg" alt="Direct Output Model" width="=70%" />
+<img src="https://magmai-ai.github.io/magmai-doc/doc_images/image_to_image_0.jpg" alt="Direct Output Model" width="=70%" />
 
 The example workflow shown above is a **Image to Image** workflow.
 
