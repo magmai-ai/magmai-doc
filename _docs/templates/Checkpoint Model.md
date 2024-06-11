@@ -10,7 +10,7 @@ order: 1000
 <img src="https://magmai-ai.github.io/magmai-doc/doc_images/CheckpointModel0.jpg" alt="Checkpoint Model" width="=70%" />
 ```sd15``` ```anime```
 This model is known for its exquisite ```anime``` style image generation. It supports high-resolution image output, ensuring that the generated images have rich details and clear textures. The model can provide high-quality visual works for anime enthusiasts and artists.
-<br>
+
 |     Parameter     | Vaule                  |
 | :---------:| :-------------:|
 | ```step``` | 35 |
@@ -25,7 +25,7 @@ This model is known for its exquisite ```anime``` style image generation. It sup
 <img src="https://magmai-ai.github.io/magmai-doc/doc_images/CheckpointModel1.jpg" alt="Checkpoint Model" width="=70%" />
 
 This model is known for its unique ```ink-style``` 2D image generation capabilities, creating visual works with oriental aesthetic characteristics. In addition, it also supports the rapid generation of images through simple prompts, allowing users to achieve satisfactory creative results even with basic descriptions.
-<br>
+
 |     Parameter     | Vaule                  |
 | :---------:| :-------------:|
 | ```step``` | 30 |
