@@ -333,7 +333,7 @@ This model is distinguished by its ```rapid``` image generation speed. While mai
 
 <img src="https://magmai-ai.github.io/magmai-doc/doc_images/CheckpointModel18.jpg" alt="Checkpoint Model" width="=70%" />
 
-This model is characterized by its focus on ```3D``` ```Japanese``` ```animation``` style image generation, capable of creating characters and scenes with the fun and vivid expressions like Pixar animated films.  
+This model is characterized by its focus on ```3D``` ```animation``` style image generation, capable of creating characters and scenes with the fun and vivid expressions like Pixar animated films.  
 
 
 |     Parameter     | Vaule                  |
