@@ -19,6 +19,7 @@
         <script async src='https://www.google-analytics.com/analytics.js'></script>
     {% endif %}
     <style>
+        /* 基础结构 */
         body {
             display: flex;
             position: fixed;
@@ -34,43 +35,20 @@
         header form {
             z-index: 1000; 
         }
+        /* 基础结构 */
+
+        /* 导航栏 */
         nav {
             width: 300px;
-            height:720px;
+            height:100vh;
             overflow-y: auto;
             z-index: 900; 
-            -ms-overflow-style: none;  /* 适用于 Internet Explorer 和 Edge */
-            scrollbar-width: none;  /* 适用于 Firefox */
+            -ms-overflow-style: none; 
+            scrollbar-width: none; 
         }
-        .main {
-            position: relative;
-            padding: 20px;
-            flex: 1;
-            height:800px;
-            overflow-y: auto;
-            z-index: 750;
-            -ms-overflow-style: none;  /* 适用于 Internet Explorer 和 Edge */
-            scrollbar-width: none;  /* 适用于 Firefox */
-            transform: translateX(-180px); 
-            transition: transform 0.3s ease-in-out, width 0.3s ease-in-out, opacity 0.3s ease-in-out; /* 添加过渡效果 */
-        }
-        nav ul {
-            width: 300px;
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            z-index: 900; 
-        }
-        nav ul li a{
-            z-index: 900; 
-        }
-        nav > ul > li {
-            position: relative;
-            border-radius: 8px;
-            z-index: 900; 
-        }
+        /* 二级菜单 */
         nav ul ul {
-            display: none;
+            display: block;
             position: relative;
             top: 100%;
             width: 300px;
@@ -78,52 +56,55 @@
             padding: 0;
             margin: 0;
             overflow: hidden;
-            transition: all 0.3s ease-in-out;
+            opacity: 0; 
+            max-height: 0; 
+            transition: all 0.3s ease-in-out; 
             z-index: 900; 
         }
-        nav ul ul li {
-            width: 300px;
-            z-index: 900; 
+        /* 打开二级 */
+        nav ul li.open > ul {
+            display: block;
+            opacity: 1; 
+            max-height: 1000px; 
         }
+        /* 二级标签 */
         nav ul ul li a {
             display: block;
             padding: 10px;
             width: 300px;
             border-radius: 5px;
-            text-decoration: none;
             z-index: 900; 
         }
-        nav ul ul li a:hover {
-            z-index: 900; 
+        /* 导航栏 */
+
+        /* 主体 */
+        .main {
+            position: relative;
+            padding: 20px;
+            flex: 1;
+            height:100vh;
+            overflow-y: auto;
+            z-index: 750;
+            -ms-overflow-style: none; 
+            scrollbar-width: none; 
+            transform: translateX(-180px); 
+            transition: all 0.3s ease-in-out; 
         }
-        nav ul li:hover > ul {
-            display: block;
-            z-index: 900; 
-        }
-        nav ul li.open > ul {
-            display: block;
-            z-index: 900; 
-        }
+        /* 主体 */
+        
+        /* 页内目录 */
         .toc {
             margin-top: 108px; 
             width: 200px; 
-            height: 720px;
+            height: 100vh;
             overflow-y: auto;
             padding: 20px;
             background-color: #fff;
             z-index: 700;
-            -ms-overflow-style: none;  /* 适用于 Internet Explorer 和 Edge */
-            scrollbar-width: none;  /* 适用于 Firefox */
-            transition: transform 0.3s ease-in-out, width 0.3s ease-in-out, opacity 0.3s ease-in-out; /* 添加过渡效果 */
-            opacity: 0; /* 隐藏时字体透明 */
-        }
-        .toc:hover {
-            width: 200px; /* 悬停时宽度 */
-            opacity: 1; /* 悬停时字体可见 */
-            z-index: 1; 
-        }
-        .toc:hover + .main{
-            transform: translateX(0);
+            -ms-overflow-style: none; 
+            scrollbar-width: none; 
+            transition: all 0.3s ease-in-out; 
+            opacity: 0; 
         }
         .toc ul {
             list-style: none;
@@ -133,6 +114,7 @@
         .toc ul li {
             margin-bottom: 10px;
         }
+        /* 目录内容 */
         .toc a {
             text-decoration: none;
             color: #666;
@@ -143,12 +125,28 @@
             font-size: 16px;
             font-weight: 600;
         }
+
         .toc a:hover {
             color: #111;
         }
-        .toc a.active {
-            color: #111;
+        /* 打开目录 */
+        .toggle-toc-button {
+            position: fixed;
+            top: 20px;
+            left: 320px;
+            width: 30px;
+            height: 30px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            cursor: pointer;
+            z-index: 1000;
+            transition: transform 0.3s ease-in-out; 
         }
+        .toggle-toc-button:hover {
+            transform: scale(1.1); 
+        }
+        /* 页内目录 */
     </style>
 </head>
 
@@ -175,16 +173,24 @@
 
             <ul>
                 {% assign grouped = site.docs | group_by: 'category' %}
-                {% for group in grouped %}
-                    <li class="nav-item top-level {% if group.name == page.category % and group.items | where: 'url', page.url %}open{% endif %}">
-                        {% assign items = group.items | sort: 'order' %}
-                        <a href="{{ site.baseurl }}{{ items.first.url }}">{{ group.name }}</a>
-                        <ul>
-                            {% for item in items %}
-                                <li class="nav-item {% if item.url == page.url %}current{% endif %}"><a href="{{ site.baseurl }}{{ item.url }}">{{ item.title }}</a></li>
-                            {% endfor %}
-                        </ul>
-                    </li>
+                <!-- 在这里可以设置一级标签的顺序 -->
+                {% assign ordered_categories = "Overview|How to|Nodes|Models|Templates|Q&A" | split: '|' %}
+                {% for category in ordered_categories %}
+                        {% for group in grouped %}
+                           {% if group.name == category %}
+                                <li class="nav-item top-level">
+                                    <a href="#">{{ category }}</a>
+                                    <ul>
+                                        {% assign items = group.items | sort: 'order' %}
+                                        {% for item in items %}
+                                            <li class="nav-item">
+                                                <a href="{{ site.baseurl }}{{ item.url }}">{{ item.title }}</a>
+                                            </li>
+                                        {% endfor %}
+                                    </ul>
+                                </li>
+                        {% endif %}
+                    {% endfor %}
                 {% endfor %}
             </ul>
 
@@ -197,6 +203,8 @@
         </nav>
     </header>
 
+    <button type="button" class="toggle-toc-button" id="toggle-toc-button"></button>
+    
     <aside class="toc">
         <ul id="toc-list">
             <!-- 页内目录项会动态生成 -->
@@ -214,47 +222,52 @@
     </section>
 
     <script>
-        document.getElementById("open-nav").addEventListener("click", function () {
-            document.body.classList.toggle("nav-open");
-        });
-    
+        // 点击方式打开和关闭二级菜单
+        document.addEventListener('DOMContentLoaded', function() {
         const navItems = document.querySelectorAll('nav .nav-item.top-level');
-        let delayTimer; // 延迟关闭菜单的计时器
-        
+
         navItems.forEach(item => {
-            item.addEventListener('mouseover', function () {
-                if (this.classList.contains('open')) {
-                   
+            item.addEventListener('click', function(event) {
+                const isOpen = this.classList.contains('open');
+
+                if (!isOpen) {
+                    this.classList.add('open');
                 } else {
-                    this.classList.add('open'); // 打开当前菜单
+                    this.classList.remove('open');
                 }
+                event.stopPropagation(); 
             });
-        
-            item.addEventListener('mouseout', function () {
-                const self = this;
-                clearTimeout(delayTimer); // 清除之前的延迟关闭计时器
-                delayTimer = setTimeout(function () {
-                    // 保持菜单开启状态
-                    self.classList.add('open');
-                }, 500); // 设置延迟时间，单位为毫秒
-            });
+        });
+    });
+
+        const toggleTocButton = document.getElementById('toggle-toc-button');
+        const toc = document.querySelector('.toc');
+        const main = document.querySelector('.main');
+        // 按钮打开和关闭页内目录
+        toggleTocButton.addEventListener('click', function() {
+            if (toc.style.opacity === '1') {
+                toc.style.opacity = '0';
+                main.style.transform = 'translateX(-180px)'; 
+            } else {
+                toc.style.opacity = '1';
+                main.style.transform = 'translateX(0)'; 
+            }
         });
 
+        // 生成页内目录
         function generateTOC() {
             const tocList = document.getElementById('toc-list');
             const content = document.querySelector('.content');
             const headers = content.querySelectorAll('h1, h2');
-
             const pageTitle = '{{ page.title }}';
             const pageTitleId = 'page-title';
 
-            // 添加页面标题（第一个h1）作为第一个项目，使用不同的样式
             if (pageTitle) {
                 const titleLi = document.createElement('li');
                 const titleA = document.createElement('a');
                 titleA.href = '#top';
                 titleA.innerText = pageTitle;
-                titleA.classList.add('toc-title'); // 添加自定义类名
+                titleA.classList.add('toc-title'); 
                 titleLi.appendChild(titleA);
                 tocList.appendChild(titleLi);
             }
@@ -269,26 +282,15 @@
                 li.appendChild(a);
                 tocList.appendChild(li);
             });
+            
+            // 检查目录中是是否没有其他小标题
+            if (headers.length === 0 ) {
+                const tocButton = document.getElementById('toggle-toc-button');
+                tocButton.style.display = 'none'; 
+                document.querySelector('.toc').style.display = 'none'; 
+                document.querySelector('.main').style.transform = 'translateX(60px)'; 
+            }
         }
-        window.addEventListener('scroll', function () {
-            const headers = document.querySelectorAll('.content h1, .content h2');
-            let currentActive = null;
-
-            headers.forEach(header => {
-                const rect = header.getBoundingClientRect();
-                if (rect.top <= 0 && rect.bottom >= 0) {
-                    currentActive = header;
-                }
-            });
-
-            const tocLinks = document.querySelectorAll('.toc a');
-            tocLinks.forEach(link => {
-                link.classList.remove('active');
-                if (currentActive && link.getAttribute('href') === '#' + currentActive.id) {
-                    link.classList.add('active');
-                }
-            });
-        });
 
         generateTOC();
     </script>
