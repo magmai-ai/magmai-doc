@@ -208,7 +208,9 @@ https://www.youtube.com/embed/ + 视频id
 
 - [ ] How to Use
   - [ ] How to Import ComfyUI Workflow
-  
+
+如何改变目录一级标签的顺序：
+在_layout/default.md文档的177行，assign ordered_categories = "Overview|How to|Nodes|Models|Templates|Q&A" 决定了标签的顺序，需要手动输入标签的正确名称并使用分隔符“｜”分开。
 
 
 ## Content Requirements
